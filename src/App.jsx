@@ -1,7 +1,11 @@
-import "./App.css";
+import Quiz from "./Components/Quiz/Quiz";
 
 function App() {
-  return <div className="text-green-400 font-medium">Hello Rupesh</div>;
+  return (
+    <>
+      <Quiz />
+    </>
+  );
 }
 
 export default App;
