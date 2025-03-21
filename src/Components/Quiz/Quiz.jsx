@@ -32,19 +32,19 @@ function Quiz() {
 
   return (
     <div className="bg-blue-400 h-screen flex justify-center items-center">
-      <div className="p-4 bg-blue-200 rounded-xl m-5">
-        <h2 className="text-blue-600 text-2xl font-medium mb-1 cursor-default">
+      <div className="p-2 md:p-4 w-[600px]  sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/4 bg-blue-200 rounded-xl m-5">
+        <h2 className="text-blue-600 text-xl md:text-2xl font-medium mb-2 cursor-default">
           JavaScript Quiz
         </h2>
-        <hr className="border-black border-t-2 mt-3" />
+        <hr className="border-black border-t-2 mt-1 md:mt-3" />
 
-        <div className="mt-5 flex flex-col">
-          <div className=" ">
-            <h2 className="font-medium text-lg cursor-default">
+        <div className="mt-2 md:mt-5 flex flex-col">
+          <div className="">
+            <h2 className="font-medium text-sm md:text-lg cursor-default">
               {index + 1} . {currentQuestion.question}
             </h2>
 
-            <ul className="mt-5">
+            <ul className="mt-3 md:mt-5">
               {options.map((option, i) => {
                 let isCorrect = currentQuestion.ans === i + 1;
                 let isSelected = selectedAnswer === i;
@@ -52,7 +52,7 @@ function Quiz() {
                 return (
                   <li
                     key={i}
-                    className={`flex items-center font-normal border h-[6vh] mb-5 rounded-md p-2 cursor-pointer 
+                    className={`flex items-center font-normal text-sm sm:text-base border  md:h-[6vh] mb-2 md:mb-5 rounded-md p-1 md:p-2 cursor-pointer 
                  ${
                    isAnswered
                      ? isCorrect
@@ -71,7 +71,7 @@ function Quiz() {
             </ul>
           </div>
 
-          <div className="flex justify-center mt-5 ">
+          <div className="flex justify-center mt-2 md:mt-5 ">
             <button
               onClick={nextQuestion}
               className="border-0 p-[10px] w-1/2 bg-blue-500 hover:bg-blue-800 rounded-xl text-white cursor-pointer"
@@ -81,7 +81,7 @@ function Quiz() {
           </div>
         </div>
 
-        <div className="flex justify-center mt-2 font-serif cursor-default">
+        <div className="flex justify-center mt-1 md:mt-2 font-serif cursor-default">
           {index + 1} of {data.length} Question
         </div>
       </div>
